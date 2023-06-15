@@ -1,0 +1,432 @@
+* Curso Cooperativismo de Plataforma - Sesc Paulista - ago/2023
+
+Segundo o [[https://docs.google.com/document/d/1prypYbxMsj4N91ErG1UHWjxvB5OWmHACeVLNNlseT44/edit?usp=sharing][plano original]] as 8 aulas do curso estarão divididas da seguinte forma:
+
+1) Duas aulas de conceituação, debate, embasamento teórico;
+2) /Duas aulas para programação, lógica e introdução à ferramenta;/
+3) Uma aula para design de nova aplicação (e alencar tecnologias necessárias);
+4) Duas aulas para desenvolvimento da aplicação;
+5) Uma aula para debate e conclusão.
+
+A seguir, proposta de plano de aula para as duas aulas compreendidos no item 2 da lista acima:
+
+Para as duas aulas, dividir o tempo em 3/4 para apresentação de conceitos, teoria e discussão e 1/4 final para abordagem prática.
+
+** Aula 3 - como funcionam os computadores
+
+Objetivo macro: os alunos devem sair conhecendo os conceitos fundamentais da tecnologia digital e, mais importante, saber que seus dispositivos, como computador, tablets e celulares (hardware) podem receber instruções (software) para excecução de qualquer tarefa, orientado à resolução de qualquer problema.
+
+*** "Quantos dedos tem os marcianos?"
+
+Esse é um exercício meio de brincadeira que aparece em alguns livros de matemática. A pergunta é precedita por alguma informação do tipo "um robô que andava pela superfícia de marte encontrou uma caixa escrito 'contém' 12 esferas, mas depois de abrir a caixa foram encontradas 8 esferas". A resolução, meio absuda, é de que o valor 8 pode ser representado como 12 num sistema de base 6: ou seja um conjunto de apenas 6 algarismos. O nosso sistema numérico é de base 10, 10 algarismos de 0 a 9 que se repetem num sistema que nos permite contar infinitamente. A resposta assume que nosso sistema de base 10 está relacionada ao fato de nós, humanos, termos 10 dedos nas duas mãos. Logo os marcianos deveriam ter 6, 3 em cada mão.
+
+Números são diferente de algarismos. Números representam valores, enquanto algarismos são os símbolos usados pra descrever números. Parece uma informação não relacionada, mas tem a ver como a forma que os computadores funcionam no que dis respeito a descrição formal e raciocínio lógico.
+
+Curiosidade: há registros de sistema de base 12 e entende-se que que eram baseados nas falanges dos dedos da mão onde se usava o polegar pra apontar qual falange. 12 ainda é divísível por 2, 3, 4 e 6 o que tornaria um número mais fácil para os contas do dia-a-dia. Pode parecer pouco prático mais ainda usamos um sistema de base 12 pra contar o tempo (cada uma das metades de um dia), ou para definir quantidade (dúzia de bananas).
+
+[[./base12.jpg]]
+
+Curiosidade 2: o radical al- em algarismo aparece nas palavras algebra, alquimia e algorítimo. Todas essas origem árabe e de fato aquela região, hoje oriente médio de conheciamneot (cultural, matemático, astronômico, medicinal...). Vide palestra do Neil DeGrasse Tyson sobre Naming Rights. 
+
+O QUE É IMPORTANTE: Mostrar que outros sistemas numéricos existem.
+
+- [[https://pt.wikipedia.org/wiki/Sistema_de_numera%C3%A7%C3%A3o_duodecimal]]
+- [[https://webpages.ciencias.ulisboa.pt/~ommartins/seminario/algarismos/sumeria.htm]]
+- [[https://www.youtube.com/watch?v=fDAT98eEN5Q]]
+
+*** Qual é o sistema mais simples possível
+
+Resposta: o sistema binário.
+
+Coisas que funcionam de forma binária (ou é ou não é, ou uma coisa ou outra, sem meio termo, sem terceira opção):
+
+- lâmpada (acesa ou apagada)
+- conta de matemática (ou certa ou errada)
+- (perguntar por exemplos)
+
+Coisas que funcionam de um jeito não binário (vários estados possíveis)
+
+- lâmpada "dimerizavel" (ajusta a intensidade com um potenciometro)
+- temperatura (quente, morno, frio, gelado... depende da interpretação)
+- (perguntar por exemplos)
+
+bit: "BInary digiT"
+
+Comparação: máquinas/dispositivos que representem um dígito decimal x representem dígito binário:
+
+- dado de 10 lados x moeda
+- display de 7 segmentos x led
+
+#+ATTR_HTML: :width 200px
+[[./dado10lados.png]]
+
+#+ATTR_HTML: :width 200px
+[[./dado10ladosFlat.jpg]]
+
+[[./moeda.png]]
+
+#+ATTR_HTML: :width 300px
+[[./display7.gif]]
+
+#+ATTR_HTML: :width 300px
+[[./led.jpg]]
+
+#+ATTR_HTML: :width 300px
+[[./display-7-seg.png]]
+
+#+ATTR_HTML: :width 300
+[[./ledCircuit.png]]
+
+Com apenas dois dígitos é possível contar infiniamente. Mesma coisa com o nosso sistema de 10 dígitos. Então qual é a vantagem? Simplicidade!
+
+Lembrando, 0 e 1 são abstrações. Pode ser qualquer coisa, aberto ou fechado, aceso ou apagado, passando ou não passando corrente...
+
+Lembrando 2, o sistema é esse, mas como extraímos significado disso? [[foto prédio eusébio matoso]]
+
+#+ATTR_HTML: :width 300
+[[./eusebioMatoso.png]]
+
+O QUE É IMPORTANTE: o sistema binário é o mais simples de ser reproduzido em uma máquina.
+
+*** Hardware x Software
+
+Hardware:
+
+- "é o que você chuta"
+- duro, tangível
+- peça, circuito, solda, cabo, memória, processador...
+- é a parte que estraga
+- também é a parte que /executa/
+
+Software:
+
+- "é o que você xinga"
+- mole (?), imaterial, intangível
+- ideias, abstrações
+- é a parte que /manda executar/
+
+Questões válidas para serem mencionadas
+
+- Smartphone sempre foi um produto, computadores não (mainframes, pubnix, tildes...)
+- Obcelecência programada
+- Extração de recursos
+- Ultra especilização (tamanho das soldas em um iphone)
+
+O software precisa ter onde rodar, ok. mas como isso se dá? Camadas! (vide imagens "camadas" 1, 2 e 3).
+
+#+ATTR_HTML: :width 300
+[[./camadas1.png]]
+
+#+ATTR_HTML: :width 300
+[[./camadas2.png]]
+
+#+ATTR_HTML: :width 600
+[[./camadas3.jpg]]
+
+Exemplo prático: tablela ascii! Lidar com bits é muito pouco prático. Então criou-se uma "camada de abstração".
+
+- Com 7 bits é possivel contar até quanto? (0-127)
+- Quantas letras tem no alfabeto? (26)
+- 26 letras, variando caixa alta e caixa baixa? (52)
+- Mais os algarismos decimais (62)
+
+#+ATTR_HTML: :width 500
+[[./asciifull.gif]]
+
+E acentos, til, cedilhas? Os alfabetos cirílicos, grego, kanji, ideograms, coreano, heibraico... ?
+
+"American Standard Code for Information Interchange".
+
+O QUE É IMPORTANTE: a ideia de camadas e abstrações.
+
+*** Jogo da Vida
+
+Imagine um grid, como um jogo da velha infinito. Cada quadrado pode estar pintada, ou não. Podemos pensar que cada quadrado pintado é uma bactéria e que o quadrado não pintado é um espaço vazio. Agora vamos pensar nas seguintes regras:
+
+1. se uma bactéria estiver /imediatamente cercada/ por menos de duas outras bactérias, ela morre de isolamento (vira um espaço vazio);
+2. se uma bactéria estiver /imediatamente cercada/ por mais de três outras bactérias, ela morre sufocada (vira um espaço vazio)
+3. se um espaço vazio estiver /imaediatamente cercado/ por /exatamente/ 3 bactérias, ali nasce uma nova bactéria (vira uma casa pintada)
+
+Quem consegue fazer uma disposição inicial de bactérias onde o sistema se mantenha?
+
+E que o sistema cresça infinitamente?
+
+Alguns padrões foram batizados como criaturas.
+
+#+ATTR_HTML: :width 300
+[[./gameOfLifeGlider.gif]]
+
+#+ATTR_HTML: :width 300
+[[./glider.gif]]
+
+#+ATTR_HTML: :width 300
+[[./Gospers_glider_gun.gif]]
+
+[[./gameOfLifeReflector.gif]]
+
+#+ATTR_HTML: :width 300
+[[./gameOfLifeReplicator.png]]
+
+#+ATTR_HTML: :width 300
+[[./gameOfLifeReplicator.gif]]
+
+- [[https://playgameoflife.com/]]
+- [[https://www.youtube.com/watch?v=C2vgICfQawE]]
+- [[https://beltoforion.de/en/game_of_life/]]
+
+O micro processador 6502, usado nos /Nintendinhos/, contém apenas 52 instruções.
+
+A linguagem de programação C, usada pra programar o kernel do linux, contém 32 palavras especiais.
+
+O QUE É IMPORTANTE: a ideia de que coisas complicadas são combinações de coisas simples. Além de um pouco de visão sistêmica.
+
+*** Lógica
+
+Piada de programador:
+
+	/A esposa do programador disse:/
+	/- Vá ao mercado e traga um litro de leite. Se tiver ovos, traga seis./
+
+	/O programador voltou com seis litros de leite, então sua esposa disse:/
+	/- Programador! Porquê você trouxe seis litros de leite?/
+
+	/E o Programador respondeu:/
+	/- Eles tinham ovos.../
+
+**** Proposta de dinâmica 1:
+
+1) Jogar o jogo LightBot;
+2) Conseguir uma medalha de ouro em qualquer fase do jogo (sem ser a primeira).
+
+- [[https://www.lightbot.lu/]]
+
+**** Proposta de dinâmica 2:
+
+Tentar desenhar uma casa:
+
+- [[https://turtle.sugarlabs.org/]]
+
+O QUE É IMPORTANTE: entender que um programa de computador é uma série de instruções muito precisas e que precisam estar encadeadas numa ordem específica.
+
+*** Para o lar
+
+- [[https://thunkable.com]]
+
+*** Referências
+
+- Tudo vigiado por máquinas de adorável graça. Documentário Adam Curtis de 2011.
+- Surplus. Documentário Erik Gandini de 2003.
+
+*** Conclusão
+
+- Sistemas numéricos, bit e significado
+- Software abstrai a "dureza" do hardware
+- Por mais complexo que seja, qualquer programa é só uma sequencia de instruções muito simples
+
+** Aula 3 - como computadores conversam
+
+Objetivo macro: os alunos compreenderão a ideia de infra estrutura e o modelo cliente-servidor em suas vantagens, desvantagens e como utilizá-la. Lhe serão apresentadas algumas particularidades do desenvolvimento mobile e também terão uma ideia de como pensar a arquitetura de suas aplicações e terminarão a aula com um acesso à plataforma Thunkable. Por último, os alunos devem ser instigados a pensar criticamente sobre o ecossistema de desenvolvimento de aplicativos.
+
+*** Proposta de dinâmica
+
+Levar um raspberry e/ou notebook com alguma distro Linux instalada. No decorrer da aula serão criados usuários para cada participante e eles poderão acessar, via ssh, o computador. Ainda durante a aula algum serviço (Wordpress, Cowyo, Write, Gemini...), ou simplesmente uma página web será "servida" nesse computador e os alunos poderão acessá-lo.
+
+*** "A máquina que mudou o mundo"
+
+(requer pesquisa!) O lançamento do iPhone foi também invenção do que ficou conhecido como smartphone. Pouco tempo depois era apontado como "a máquina que mudou o mundo". Mas apesar inegável o impacto que teve, a verdadeira máquina não era o iPhone, e sim a AppStore.
+
+O QUE É IMPORTANTE: O modelo de loja de aplicativo causou uma "corrida do ouro" onde a Apple e o Google 'cobravam o pedágio'.
+
+*** Sobre smartphones
+
+- Diferente de computadores, sempre foram um produto;
+- Atualizações inúteis, obsolecência programada;
+- Diferente de computadores você não pode olhar dentro, substituir peças, fazer melhorias (sujeito a perda de garantia ou bloqueio total do aparelho);
+- Fetichezação, objeto de desejo;
+- No caso do iPhone, o aparelho possui certas tecnologias, como bluetooth, mas que só podem ser utilizadas com produtos da Apple;
+- Cadeia produtiva problemática, descarte problemático;
+- Mercado paralelo de capinha, películas, acessórios...
+
+*** Desenvolver pra mobile
+
+Primeira desvantagem: específico de plataforma. Vai desenvolver para Android ou iOS?
+
+(sim, hoje em dia existem meios de se desenvolver uma única vez, mas requer uma série de cuidados)
+
+Android:
+
+- Diversidade muito grande de modelos, especificações, hardwares, tamanhos e resoluções de tela...
+- Com exceção de power-users, você precisa seguir todos os termos e condições da lojinha do Google de aplicativos.
+
+iPhone
+
+- Dispositivos padronizados, mas requer credenciamento de desenvolvedor além de precisar de trabalhar com as ferramentas da própria Apple;
+- Refem de condições da AppStore.
+
+Essa era, mais ou menos, a realidade até uns anos atrás. Mas já tem anos que uma alternativa é possível: desenvolver um aplicativo como se fosse um "serviço web"
+
+*** Um pouco sobre desenvolvimento web
+
+Originalmente a web foi pensada pra "servir" páginas de hiper-texto.
+
+Hiper-texto são simplesmente texto com ligações para outros textos (pode não parecer muito, mais é uma ideia revolucionária, vide Memex de Vannevar Bush, o método Zettelkasten de gestão de conhecimento, ou o próprio conceito original de hipertexto de Ted Nelson)
+
+HTTP = Protocolo de transferência de hipertexto
+
+Web diferente de internet!
+
+Até a década de 2000 erá preciso muito pouco pra colocar um site no ar:
+
+- html pra definir o conteúdo do seu site
+- css pra controlar a aparência
+- javascript se quizesse que algma coisa dinâmica acontecesse na página
+- php pra controlar o que acontecia no servidor (se quisesse um /guestbook/, por exemplo)
+
+Uma série de mudanças (hardware, software, insfraestrutura, acesso à banda larga, mentalidade das pessoas...) possibiliou que a web evoluísse pra serviços pudessem ser entregues. Ex.: Google Docs, Github, Netflix rodando do navegador...
+
+Efeitos colaterais dessa mudança:
+
+- A web ficou "bloated", inchada. Uma parte considerável do volume do tráfico de daods é rastreamento e propaganda não solicitada;
+- A web ficou complicada. Você ainda pode escrever seu site com html, css e javascript. Mas fica mais difícil dos navegadores exibirem sua página corretamente, seu site fica difícil de encontrar pelos mecanismos de busca, fica mais complicado de incorporar funcionalidades;
+- Desenvolvimento web se especificou para ficar rentável (frameworks, SEO...)
+- Relato pessoal, mas me adianto em cravar: as big techs mataram a web.
+
+Ainda assim é possível falarmos dos fundamentos:
+
+*** O que acontece quando você acessa um site?
+
+Melhor comparação possível:
+
+1) Você chega num restaurante e se senta em uma mesa;
+2) O garçon chega e você faz o seu pedido;
+3) O garçon leva seu pedido até a cozinha;
+4) Baseado no seu pedido o pessoal da cozinha monta seu prato;
+5) Finalmente o garçom leva o prato até você.
+
+Quando você digita um endereço na barra de endereços do navegador, ou clica em um link, o navegador manda um pedido para o servidor. O servidor analiza o pedido e manda uma resposta. Essa resposta é a pagina que você quer acessar (ou uma mensagem de erro, caso a página não exista) que o navegador mostra de forma visual.
+
+Nesse exemplo o navegador é o cliente e o servidor, claro, é o servidor. Mas há outros arranjos possíveis. Num jogo multiplayer jogado em LAN, o jogador que cria a "sala" é o servidor e os jogadores convidados são os clientes.
+
+Para comprovar, acessar um site como [[camelo.design]] mostrar o conteúdo recebido com a opção /inspecionar/ do navegador e depois acessar via o comanod ~curl~ da linha de comando.
+
+*** Relação cliente - servidor
+
+Vantages da arquitetura cliente-servidor:
+
+- Eficiência: é mais barato prover uma única instância de um recurso do que esse recurso repetidas vezes para cada computador em um local. Ex.: uma impressora;
+- Segurança: reter um recurso em um único lugar é uma boa forma de coordenar o acesso à um recurso (impedir que duas pessoas modifiquem um arquivo ao memso tempo), ou torná-lo acessível apenas pessoas específicas. Ex.: banco de dados;
+- Independência de plataforma1: eventualmente, cada cliente pode utilizar um sistema operacional diferente. Ex.: aplicativos usados tanto em aparelhos Android e iOS.
+
+Desvantages da arquitetura cliente-servidor:
+
+- Sobrecarga: se muitos clientes acessarem o servidor simultaneamente, esse pode ficar sobrecarregado e parar de funcionar como o esperado;
+- Distribuição: os clientes podem acessar um recurso/serviço, mas não podem repassá-lo;
+- Centralização: se o servidor cai, todos os clientes ficam poder acessar.
+
+Lembrando que há arquiteturas alternativas em que a rede não é centralizada. Ex.: P2P, federada....
+
+*** *Não existe nuvem!*
+
+- Relembrando: o software roda em um hardware
+- Empresas alugam esse hardware
+- Empresas, modelo de negócios
+- (Rapidamente) sysadmin x devops
+- (Rapidamente) infra estrutura elástica. exemplo: Netflix.
+- Datacenters enormes, espalhados pelo mundo, altíssimo consumo energético.
+- (Momento chapeuzinho de papel alumínio): é confiável manter toda a lógica do seu negócio disruptivo hospedado nos servidores da Amazon, ou Google? (Microsoft, IBM...)
+- (Rapidamente): auto hospedagem de serviços, VPS e casa
+
+*** O protocolo HTTP
+
+- comparação /protocolos/ com /idiomas/;
+- comparação /linguagens/ (de programação) com /"o jeito de falar"/
+- protocolo: é a regra!
+- camadas: em cima do TCP
+- como se parece:
+
+#+BEGIN_SRC
+
+GET /index.html HTTP/1.1
+Host: www.exemplo.com
+
+#+END_SRC
+
+ou
+
+#+BEGIN_SRC
+
+GET /cat/says/batata HTTP/1.1
+Accept: */*
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Host: cataas.com
+User-Agent: HTTPie/3.2.1
+html: true
+
+#+END_SRC
+
+Mostrar exemplos com [[https://httpie.io/cli/run]]
+
+(preparar exemplos!) Exemplos possíveis:
+
+- [[pudim.com.br]]
+
+*** APIs
+
+Um programa, ou serviço online, */expõe/* parte de sua funcionalidade.
+
+/"Pra quê!?"/ Pra que ela possa ser acessada *programaticamente*.
+
+Uma coisa é eu abrir meu Google Docs, selecionar uma planilha e editar uma linha. Quantas edições eu consigo fazer por minuto?
+
+Outra coisa é escrever um programa que acessa meu Google Docs, seleciona uma planilha e altera uma linha. Quantas edições meu programa consegue fazer por segundo?
+
+Mostrar exemplos
+
+(preparar exemplos!) Exemplos possíveis:
+
+- [[https://cataas.com/cat/says/batata]]
+- [[https://pokeapi.co/api/v2/pokemon/25]]
+- [[https://ntfy.sh]]
+
+*** Thunkable
+
+*/Plataforma/* de prototipagem/desenvolvimento mobile.
+
+Desvantagens:
+
+- Empresa, modelo de negócio
+- Refém dos termos de serviço
+
+Vantagens:
+
+- Teste rápido*
+- "Low code" ou "No code"
+- /Integrações/ (abstrai chamadas de API)
+- Bem documentado
+
+Alternativas:
+
+- apprat.io
+- webflow
+- kodular
+- AppInventor*
+- bubble
+- ...
+
+*** 101 Thunkable
+
+- garantir que todos tenham um login
+- dois momentos: layout e blocos
+
+*** Referências
+
+- [[https://knightcolumbia.org/content/protocols-not-platforms-a-technological-approach-to-free-speech][Protocolos, não plataformas]]
+- [[https://intlekt.io/2023/05/20/the-digital-public-sphere/][Esfera pública digital - Pierre Levy]]
+- Lo and Behold, Reveries of the Connected World - Documentário Werner Herzog de 2016
+
+*** Conclusão
+
+- Arquitetura /cliente - servidor/
+- /Web is no more.../
+- Computadores conversam entre si: APIs
